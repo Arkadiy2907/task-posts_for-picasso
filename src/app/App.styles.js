@@ -12,7 +12,7 @@ export const AppContainer = styled.div`
 
 export const AppWrap = styled.div`
   display: flex;
-  width:760px;
+  width:780px;
   flex-direction: column;
   align-items: center;
   padding: 3px;
