@@ -19,9 +19,11 @@ export const Btn = styled.div`
   transition: opacity 0.4s linear;
   margin-bottom: 5px;
   cursor: pointer;
+  margin-top: 2px;
 
   a {
     color: white;
+    padding: 2px;
     font-size: 15px;
     text-decoration: none;
     text-transform: uppercase
