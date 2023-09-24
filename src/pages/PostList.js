@@ -16,32 +16,20 @@ function PostList() {
     const onScroll = () => {
       const scrolledToBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight;
+      const scrolledToTop = window.scrollY === 0;
 
       if (scrolledToBottom && !isFetching && page < maxLimitPage) {
         setPage(page + 1);
         window.scrollTo(0, window.scrollY - jampScrollRev);
-      }
-    };
-
-    document.addEventListener("scroll", onScroll);
-    return function () {
-      document.removeEventListener("scroll", onScroll);
-    };
-  }, [page, isFetching]);
-
-  useEffect(() => {
-    const onScroll = () => {
-      const scrolledToTop = window.scrollY === 0;
-
-      if (scrolledToTop && !isFetching && page > 0) {
+      } else if (scrolledToTop && !isFetching && page > 0) {
         setPage(page - 1);
         window.scrollTo(0, window.scrollY + jampScrollRev);
       }
     };
 
-    document.addEventListener("scroll", onScroll);
+    document.addEventListener('scroll', onScroll);
     return function () {
-      document.removeEventListener("scroll", onScroll);
+      document.removeEventListener('scroll', onScroll);
     };
   }, [page, isFetching]);
 
