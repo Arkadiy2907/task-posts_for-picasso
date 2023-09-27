@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import { FixedSizeList as List } from 'react-window';
 
 const maxLimitPage = 10;
-const jampScrollRev = 5;
+const jampScrollRev = 0;
 const itemSize = 100;
 
 function PostList() {
-  const [page, setPage] = useState(0);
+  const [page, setPage] = useState(1);
   const { data: posts, isLoading, isFetching } = useGetPostsQuery(page);
   const height = window.innerHeight + itemSize;
 
